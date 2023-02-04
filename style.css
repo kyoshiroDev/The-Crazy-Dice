@@ -101,12 +101,16 @@ body {
 	align-items: center;
 	justify-content: center;
 }
-.dice {
+.the-dice {
 	position: relative;
 	width: 70px;
 	height: 70px;
 	transform-style: preserve-3d;
-	transition: transform 1s;
+  animation: spin 20s infinite alternate-reverse;
+}
+
+.dice-roll{
+  animation: spin 1s infinite alternate-reverse;
 }
 
 .dot {
@@ -151,26 +155,6 @@ body {
 
 .side:nth-child(2) {
 	transform: rotateY(-180deg) translateZ(35px);
-}
-
-.show-1 {
-	transform: rotateX(0deg) rotateZ(0deg);
-}
-
-.show-6 {
-	transform: rotateX(-90deg) rotateZ(1080deg);
-}
-
-.show-4 {
-	transform: rotateY(-45deg) rotateZ(-1440deg);
-}
-
-.show-5 {
-	transform: rotateX(-810deg) rotateZ(720deg);
-}
-
-.show-2 {
-	transform: rotateX(180deg) rotateZ(0deg);
 }
 
 .two-1,
@@ -220,6 +204,15 @@ body {
 .six-5 {
 	top: 50%;
 	left: 80%;
+}
+
+@keyframes spin {
+  from{
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    transform: rotateX(1080deg) rotateY(1080deg) rotateZ(-1080deg);
+  }
 }
 
 @media screen and (min-width: 576px) {

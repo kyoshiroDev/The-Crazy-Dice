@@ -1,20 +1,19 @@
-var elDiceOne = document.getElementById("dice1");
-var elComeOut = document.getElementById("roll");
+const theDice = document.querySelector("the-dice");
+const elComeOut = document.getElementById("roll");
+const theRollDice = document.getElementById("dice");
 
 elComeOut.onclick = function () {
 	rollDice();
 };
 
 function rollDice() {
-	var diceOne = Math.floor(Math.random() * 6 + 1);
-	
+	let dice = Math.floor(Math.random() * 6 + 1);
+	console.log(dice);
 
-	console.log(diceOne);
-
-	for (var i = 1; i <= 6; i++) {
-		elDiceOne.classList.remove("show-" + i);
-		if (diceOne === i) {
-			elDiceOne.classList.add("show-" + i);
+	for (let i = 1; i <= 6; i++) {
+		theDice.classList.remove("dice-" + i);
+		if (dice === i) {
+			theDice.classList.add("dice-" + i);
 		}
 	}
 }
