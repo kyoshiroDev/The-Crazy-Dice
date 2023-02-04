@@ -126,27 +126,27 @@ body {
 }
 
 .side:nth-child(1) {
-	transform: translateZ(50px);
+	transform: translateZ(35px);
 }
 
 .side:nth-child(6) {
-	transform: rotateY(90deg) translateZ(50px);
+	transform: rotateY(90deg) translateZ(35px);
 }
 
 .side:nth-child(3) {
-	transform: rotateY(-90deg) translateZ(50px);
+	transform: rotateY(-90deg) translateZ(35px);
 }
 
 .side:nth-child(4) {
-	transform: rotateX(90deg) translateZ(50px);
+	transform: rotateX(90deg) translateZ(35px);
 }
 
 .side:nth-child(5) {
-	transform: rotateX(-90deg) translateZ(50px);
+	transform: rotateX(-90deg) translateZ(35px);
 }
 
 .side:nth-child(2) {
-	transform: rotateY(-180deg) translateZ(50px);
+	transform: rotateY(-180deg) translateZ(35px);
 }
 
 .show-1 {
@@ -234,6 +234,30 @@ body {
 		width: 100px;
 		height: 100px;
 	}
+
+  .side:nth-child(1) {
+    transform: translateZ(50px);
+  }
+  
+  .side:nth-child(6) {
+    transform: rotateY(90deg) translateZ(50px);
+  }
+  
+  .side:nth-child(3) {
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+  
+  .side:nth-child(4) {
+    transform: rotateX(90deg) translateZ(50px);
+  }
+  
+  .side:nth-child(5) {
+    transform: rotateX(-90deg) translateZ(50px);
+  }
+  
+  .side:nth-child(2) {
+    transform: rotateY(-180deg) translateZ(50px);
+  }
 
 	.number-p1,
 	.number-p2 {
