@@ -87,6 +87,10 @@ body {
 	border: 2px solid #c45844;
 	border-radius: 600px;
 }
+.rollDice,
+.hold {
+	margin: 10px;
+}
 /* Dice */
 .container-dice {
 	position: absolute;
@@ -276,20 +280,36 @@ body {
 	}
 
 	.containerBtn2 {
-		width: 100px;
-		height: 20%;
-		margin-bottom: 20px;
+		width: auto;
+		height: 30%;
 	}
 	.newGame {
 		margin-top: 20px;
 	}
 
+	.rollDice,
+	.hold {
+		margin: 10px;
+	}
+}
+@media screen and (min-width: 768px) {
 	.newGame,
 	.rollDice,
 	.hold {
-		width: 100px;
-		height: 30px;
+		width: 200px;
+		height: 50px;
 		font-size: 1.5rem;
 		border-radius: 600px;
+	}
+  .containerBtn2 {
+		margin-bottom: 10px;
+	}
+}
+@media screen and (min-width: 992px) {
+	.containerBtn2 {
+		margin-bottom: 70px;
+	}
+	.newGame {
+		margin-top: 50px;
 	}
 }
