@@ -12,8 +12,5 @@ function rollDice() {
 
 	for (let i = 1; i <= 6; i++) {
 		theDice.classList.remove("dice-" + i);
-		if (dice === i) {
-			theDice.classList.add("dice-" + i);
-		}
 	}
 }
