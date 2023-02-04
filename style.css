@@ -296,20 +296,24 @@ body {
 	.newGame,
 	.rollDice,
 	.hold {
-		width: 200px;
-		height: 50px;
 		font-size: 1.5rem;
 		border-radius: 600px;
 	}
-  .containerBtn2 {
+	.containerBtn2 {
 		margin-bottom: 10px;
 	}
 }
 @media screen and (min-width: 992px) {
 	.containerBtn2 {
-		margin-bottom: 70px;
+		margin-bottom: 20px;
 	}
 	.newGame {
 		margin-top: 50px;
+	}
+	.newGame,
+	.rollDice,
+	.hold {
+		width: 200px;
+		height: 50px;
 	}
 }
