@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style-type: none;
+	font-size: 62.5%;
+	font-family: lato, serif, sans-serif;
+}
+
+body {
+	width: auto;
+	height: 100vh;
+	background-color: #c45844;
+}
+
+.bg-main {
+	width: 100%;
+	height: 100%;
+	border: #c45844 solid 15px;
+}
+.bg-p1 {
+	width: 100%;
+	height: 100%;
+	background-color: #458e9d;
+	border-radius: 50px 50px 0px 0px;
+}
+.bg-p2 {
+	width: 100%;
+	height: 100%;
+	background-color: #f0c300;
+	border-radius: 0px 0px 50px 50px;
+}
+
+.content-p1 {
+	width: 100%;
+	height: 100%;
+}
+.p1,
+.p2 {
+	color: #c45844;
+	font-size: 4rem;
+	text-align: center;
+	width: 120%;
+}
+
+.play {
+	border-left: solid 5px white;
+	border-right: solid 5px white;
+}
+.number-p1,
+.number-p2 {
+	font-size: 5.2rem;
+	color: #474645;
+}
+
+.current {
+	background-color: #c45844;
+	width: 150px;
+	font-size: 2.5rem;
+	color: #fefcfb;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.containerBtn {
+	position: absolute;
+	width: 90%;
+	height: 100%;
+}
+
+.containerBtn2 {
+	width: 100px;
+	height: 100px;
+}
+
+.newGame,
+.rollDice,
+.hold {
+	width: 100px;
+	height: 30px;
+	color: #c45844;
+	font-weight: 700;
+	background-color: #fefcfb;
+	font-size: 1.5rem;
+	border: 2px solid #c45844;
+	border-radius: 600px;
+}
+/* Dice */
+.container-dice {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.dice {
+	position: relative;
+	width: 70px;
+	height: 70px;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+
+.dot {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: -10px 5px 5px -10px;
+	border-radius: 20px;
+	background-color: #c45844;
+}
+
+.side {
+	position: absolute;
+	background-color: #fff;
+	border-radius: 5px;
+	width: 70px;
+	height: 70px;
+	border: 1px solid #e5e5e5;
+	text-align: center;
+	line-height: 2em;
+}
+
+.side:nth-child(1) {
+	transform: translateZ(50px);
+}
+
+.side:nth-child(6) {
+	transform: rotateY(90deg) translateZ(50px);
+}
+
+.side:nth-child(3) {
+	transform: rotateY(-90deg) translateZ(50px);
+}
+
+.side:nth-child(4) {
+	transform: rotateX(90deg) translateZ(50px);
+}
+
+.side:nth-child(5) {
+	transform: rotateX(-90deg) translateZ(50px);
+}
+
+.side:nth-child(2) {
+	transform: rotateY(-180deg) translateZ(50px);
+}
+
+.show-1 {
+	transform: rotateX(0deg) rotateZ(0deg);
+}
+
+.show-6 {
+	transform: rotateX(-90deg) rotateZ(1080deg);
+}
+
+.show-4 {
+	transform: rotateY(-45deg) rotateZ(-1440deg);
+}
+
+.show-5 {
+	transform: rotateX(-810deg) rotateZ(720deg);
+}
+
+.show-2 {
+	transform: rotateX(180deg) rotateZ(0deg);
+}
+
+.two-1,
+.three-1,
+.four-1,
+.five-1,
+.six-1 {
+	top: 20%;
+	left: 20%;
+}
+
+.four-3,
+.five-3,
+.six-4 {
+	top: 20%;
+	left: 80%;
+}
+
+.one-1,
+.three-2,
+.five-5 {
+	top: 50%;
+	left: 50%;
+}
+
+.four-2,
+.five-2,
+.six-3 {
+	top: 80%;
+	left: 20%;
+}
+
+.two-2,
+.three-3,
+.four-4,
+.five-4,
+.six-6 {
+	top: 80%;
+	left: 80%;
+}
+
+.six-2 {
+	top: 50%;
+	left: 20%;
+}
+
+.six-5 {
+	top: 50%;
+	left: 80%;
+}
+
+@media screen and (min-width: 768px) {
+	.bg-p1 {
+		border-radius: 50px 0px 0px 50px;
+	}
+	.bg-p2 {
+		border-radius: 0px 50px 50px 0px;
+	}
+	.dice {
+		width: 100px;
+		height: 100px;
+	}
+
+	.side {
+		width: 100px;
+		height: 100px;
+	}
+	.p1,
+	.p2 {
+		color: #c45844;
+		font-size: 6rem;
+	}
+	.number-p1,
+	.number-p2 {
+		font-size: 12.2rem;
+	}
+	.current {
+		font-size: 4.5rem;
+	}
+	.containerBtn {
+		position: absolute;
+		width: 100%;
+		height: 90%;
+	}
+
+	.containerBtn2 {
+		width: 100px;
+		height: 150px;
+		margin-bottom: 70px;
+	}
+	.newGame,
+	.rollDice,
+	.hold {
+		width: 300px;
+		height: 60px;
+		font-size: 2rem;
+	}
+
+	@media screen and (max-width: 1440px) {
+		.newGame,
+		.rollDice,
+		.hold {
+			width: 200px;
+			height: 50px;
+			font-size: 1.5rem;
+		}
+	}
+}
