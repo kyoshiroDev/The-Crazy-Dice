@@ -42,12 +42,12 @@ body {
 	font-size: 3rem;
 	text-align: center;
 	width: 100%;
+	margin-top: 20px;
 }
 
 .play {
 	border-top: solid 2px white;
 	border-bottom: solid 2px white;
-	
 }
 .number-p1,
 .number-p2 {
@@ -235,30 +235,33 @@ body {
 		height: 100px;
 	}
 
-  .side:nth-child(1) {
-    transform: translateZ(50px);
-  }
-  
-  .side:nth-child(6) {
-    transform: rotateY(90deg) translateZ(50px);
-  }
-  
-  .side:nth-child(3) {
-    transform: rotateY(-90deg) translateZ(50px);
-  }
-  
-  .side:nth-child(4) {
-    transform: rotateX(90deg) translateZ(50px);
-  }
-  
-  .side:nth-child(5) {
-    transform: rotateX(-90deg) translateZ(50px);
-  }
-  
-  .side:nth-child(2) {
-    transform: rotateY(-180deg) translateZ(50px);
-  }
+	.side:nth-child(1) {
+		transform: translateZ(50px);
+	}
 
+	.side:nth-child(6) {
+		transform: rotateY(90deg) translateZ(50px);
+	}
+
+	.side:nth-child(3) {
+		transform: rotateY(-90deg) translateZ(50px);
+	}
+
+	.side:nth-child(4) {
+		transform: rotateX(90deg) translateZ(50px);
+	}
+
+	.side:nth-child(5) {
+		transform: rotateX(-90deg) translateZ(50px);
+	}
+
+	.side:nth-child(2) {
+		transform: rotateY(-180deg) translateZ(50px);
+	}
+	.p1,
+	.p2 {
+		margin-top: 0;
+	}
 	.number-p1,
 	.number-p2 {
 		font-size: 8.2rem;
@@ -275,10 +278,10 @@ body {
 	.containerBtn2 {
 		width: 100px;
 		height: 20%;
-    margin-bottom: 20px;
+		margin-bottom: 20px;
 	}
 	.newGame {
-	margin-top: 20px;
+		margin-top: 20px;
 	}
 
 	.newGame,
@@ -290,4 +293,3 @@ body {
 		border-radius: 600px;
 	}
 }
-
