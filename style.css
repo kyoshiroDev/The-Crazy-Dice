@@ -101,6 +101,7 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+
 .the-dice {
 	position: relative;
 	width: 70px;
@@ -125,7 +126,6 @@ body {
 .side {
 	position: absolute;
 	background-color: #fff;
-	border-radius: 5px;
 	width: 70px;
 	height: 70px;
 	border: 1px solid #e5e5e5;
