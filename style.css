@@ -108,11 +108,10 @@ body {
 	width: 70px;
 	height: 70px;
 	transform-style: preserve-3d;
-	animation: spin 20s infinite alternate-reverse;
 }
 
 .dice-roll {
-	animation: spin 1s infinite alternate-reverse;
+	animation: spin 2s infinite alternate-reverse;
 }
 
 .dot {
@@ -134,7 +133,7 @@ body {
 	line-height: 2em;
 }
 
-.side:nth-child(1) {
+.side-1 {
 	transform: translateZ(35px);
 }
 
@@ -310,4 +309,8 @@ body {
 		width: 200px;
 		height: 50px;
 	}
+  .the-dice {
+    width: 100px;
+    height: 100px;
+  }
 }
