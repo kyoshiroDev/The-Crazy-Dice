@@ -108,7 +108,7 @@ body {
 	width: 70px;
 	height: 70px;
 	transform-style: preserve-3d;
-	transition: 1s transform 1s;
+	transition: 5s transform 2.5s;
 }
 .face-1 {
 	transform: rotateX(0deg) rotatez(360deg);
@@ -117,7 +117,7 @@ body {
 	transform: rotateX(180deg) rotateZ(180deg)
 }
 .face-3 {
-	transform: rotateX(-360deg)rotateY(90deg);
+	transform: rotateX(-360deg)rotateY(90deg)rotateZ(360deg);
 }
 .face-4 {
 	transform: rotateX(90deg) rotateZ(180deg) 
@@ -128,9 +128,9 @@ body {
 .face-6 {
 	transform: rotatez(360deg) rotateY(-90deg);
 }
-.dice-roll {
+/*.dice-roll {
 	animation: spin 1s ease-in-out;
-}
+}*/
 
 .dot {
 	position: absolute;
