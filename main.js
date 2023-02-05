@@ -1,26 +1,26 @@
-
-
 /* Le lancé du dé et affichage résultat */
 let theDice = document.querySelector("#dice");
 const elComeOut = document.querySelector("#roll");
-const theRollDice = document.querySelector("#dice");
 
 elComeOut.onclick = function rollDice() {
 	let diceResult = Math.floor(Math.random() * 6 + 1);
+  
+	theDice.classList.add("dice-roll", "face-" + diceResult);
+	theDice.addEventListener("animationend", () => {
+		theDice.classList.remove("dice-roll");
+	});
 
-	theDice.classList.add("dice-roll");
+	for (var i = 1; i <= 6; i++) {
+		theDice.classList.remove("face-" + i);
+		if (diceResult === i) {
+			theDice.classList.add("face-" + i);
+		}
+	}
+};
+
+/*theDice.classList.add("dice-roll");
 	console.log(diceResult);
 
 	setTimeout(function rollDice() {
 		theDice.classList.remove("dice-roll");
-	}, 6000); 
-
-  for (let i = 1; i <= 6; i++) {
-		if (diceResult === i) {
-			theDice.querySelector("#face-" + i);
-    }
-  } 
-
-};
-
-
+	}, 5000);*/

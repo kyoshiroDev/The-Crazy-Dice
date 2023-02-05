@@ -108,11 +108,28 @@ body {
 	width: 70px;
 	height: 70px;
 	transform-style: preserve-3d;
+	transition: 10ms transform 2.5s;
 }
-
+.face-1 {
+	transform: rotateX(0deg) rotatez(360deg);
+}
+.face-2 {
+	transform: rotateX(180deg) rotateZ(180deg)
+}
+.face-3 {
+	transform: rotateX(-360deg)rotateY(90deg);
+}
+.face-4 {
+	transform: rotateX(90deg) rotateZ(180deg) 
+}
+.face-5 {
+	transform: rotateX(90deg) rotateY(0deg);
+}
+.face-6 {
+	transform: rotatez(360deg) rotateY(-90deg);
+}
 .dice-roll {
-	animation: spin 2.5s ease-in-out;
-  animation-timing-function: cubic-bezier(1,-0.02,0,1.01);
+	animation: spin 1s ease-in-out;
 }
 
 .dot {
@@ -131,7 +148,7 @@ body {
 	height: 70px;
 	border: 1px solid #e5e5e5;
 	text-align: center;
-  justify-content: center;
+	justify-content: center;
 	line-height: 2em;
 }
 
@@ -311,8 +328,8 @@ body {
 		width: 200px;
 		height: 50px;
 	}
-  .the-dice {
-    width: 100px;
-    height: 100px;
-  }
+	.the-dice {
+		width: 100px;
+		height: 100px;
+	}
 }
