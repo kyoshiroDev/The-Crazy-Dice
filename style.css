@@ -128,9 +128,9 @@ body {
 .face-6 {
 	transform: rotatez(360deg) rotateY(-90deg);
 }
-/*.dice-roll {
+.dice-roll {
 	animation: spin 1s ease-in-out;
-}*/
+}
 
 .dot {
 	position: absolute;
