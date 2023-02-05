@@ -111,7 +111,7 @@ body {
 }
 
 .dice-roll {
-	animation: spin 2s infinite alternate-reverse;
+	animation: spin 0.5s infinite linear;
 }
 
 .dot {
@@ -130,6 +130,7 @@ body {
 	height: 70px;
 	border: 1px solid #e5e5e5;
 	text-align: center;
+  justify-content: center;
 	line-height: 2em;
 }
 
@@ -208,7 +209,7 @@ body {
 
 @keyframes spin {
 	from {
-		transform: rotateX(0deg) rotateY(0deg);
+		transform: rotateX(360deg) rotateY(360deg);
 	}
 	to {
 		transform: rotateX(1080deg) rotateY(1080deg) rotateZ(-1080deg);
