@@ -108,7 +108,7 @@ body {
 	width: 70px;
 	height: 70px;
 	transform-style: preserve-3d;
-	transition: 5s transform 2.5s;
+	transition: 5s transform;
 }
 .face-1 {
 	transform: rotateX(0deg) rotatez(360deg);
