@@ -111,7 +111,8 @@ body {
 }
 
 .dice-roll {
-	animation: spin 0.5s infinite linear;
+	animation: spin 2.5s ease-in-out;
+  animation-timing-function: cubic-bezier(1,-0.02,0,1.01);
 }
 
 .dot {

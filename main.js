@@ -13,7 +13,7 @@ elComeOut.onclick = function rollDice() {
 
 	setTimeout(function rollDice() {
 		theDice.classList.remove("dice-roll");
-	}, 1000); 
+	}, 6000); 
 
   for (let i = 1; i <= 6; i++) {
 		if (diceResult === i) {
