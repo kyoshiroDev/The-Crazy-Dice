@@ -38,6 +38,7 @@ body {
 }
 .p1,
 .p2 {
+  z-index: 4;
 	color: #c45844;
 	font-size: 3rem;
 	text-align: center;

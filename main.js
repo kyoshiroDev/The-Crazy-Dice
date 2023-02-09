@@ -1,7 +1,7 @@
 /* Le lancé du dé et affichage résultat */
 let theDice = document.querySelector("#dice");
 const elComeOut = document.querySelector("#roll");
-let nomberP1 = document.querySelector(".number-p1");
+let numberP1 = document.querySelector(".number-p1");
 
 elComeOut.onclick = function rollDice() {
 	let diceResult = Math.floor(Math.random() * 6 + 1);
@@ -20,23 +20,23 @@ elComeOut.onclick = function rollDice() {
 };
 
 /* changement pseudo des joueurs*/
-let player1 = document.querySelector("#player1");
-let player2 = document.querySelector(".p2");
+let playerOne = document.querySelector("#player-1");
+let playerTwo = document.querySelector("#player-2");
 
-player1.addEventListener("click"),
-	() => {
-		let pseudo1 = prompt("Enter player one name");
-		player1.innerHTML = pseudo1.toUpperCase;
+playerOne.addEventListener("click", () => {
+	let pseudoOne = prompt("Enter player one name");
+	playerOne.innerHTML = pseudoOne.toUpperCase;
 
-		if (pseudo1.length < 2) {
-			player1.innerHTML = "player 1";
-		}
-	};
-player2.addEventListener("click", () => {
-	let pseudo2 = prompt("Enter player two name");
-	player2.innerHTML = pseudo2.toLocaleUpperCase;
+	if (pseudoOne.length < 2) {
+		playerOne.innerHTML = "PLAYER 1";
+	}
+});
 
-	if (pseudo2.length < 2) {
-		player2.innerHTML = "player 2";
+playerTwo.addEventListener("click", () => {
+	let pseudoTwo = prompt("Enter player two name");
+	playerTwo.innerHTML = pseudoTwo.toLocaleUpperCase;
+
+	if (pseudoTwo.length < 2) {
+		playerTwo.innerHTML = "PLAYER 2";
 	}
 });
