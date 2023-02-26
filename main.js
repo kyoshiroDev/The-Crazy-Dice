@@ -5,7 +5,7 @@ let numberP1 = document.querySelector(".number-p1");
 
 elComeOut.onclick = function rollDice() {
 	let diceResult = Math.floor(Math.random() * 6 + 1);
-
+	console.log(diceResult);
 	theDice.classList.add("dice-roll", "face-" + diceResult);
 	theDice.addEventListener("animationend", () => {
 		theDice.classList.remove("dice-roll");
@@ -16,6 +16,7 @@ elComeOut.onclick = function rollDice() {
 		if (diceResult === i) {
 			theDice.classList.add("face-" + i);
 		}
+    
 	}
 };
 
@@ -25,7 +26,7 @@ let playerTwo = document.querySelector("#player-2");
 
 playerOne.addEventListener("click", () => {
 	let pseudoOne = prompt("Enter player one name");
-	playerOne.innerHTML = pseudoOne.toUpperCase;
+	playerOne.innerHTML = pseudoOne.toUpperCase();
 
 	if (pseudoOne.length < 2) {
 		playerOne.innerHTML = "PLAYER 1";
@@ -34,9 +35,19 @@ playerOne.addEventListener("click", () => {
 
 playerTwo.addEventListener("click", () => {
 	let pseudoTwo = prompt("Enter player two name");
-	playerTwo.innerHTML = pseudoTwo.toLocaleUpperCase;
+	playerTwo.innerHTML = pseudoTwo.toLocaleUpperCase();
 
 	if (pseudoTwo.length < 2) {
 		playerTwo.innerHTML = "PLAYER 2";
+	}
+});
+
+/* Random player */
+randomPlayer.generateRandomPlayer("load", () => {
+	let randomPlayer = Math.floor(Math.random() * 2 + 1);
+	if (randomPlayer === 1) {
+		playerOne.classList.add("active");
+	} else {
+		playerTwo.classList.add("active");
 	}
 });
