@@ -102,13 +102,13 @@ function assignScoreToPlayer(score) {
 // Au clic sur le boutton hold je verouille le score dans le current du joueur actuel
 holdButton.addEventListener("click", () => {
 	if (currentPlayer === playerOne) {
-		player1.current = player1.score;
+		player1.current += player1.score;
 		player1.score = 0;
 
 		numberP1.textContent = player1.score;
 		currentTextPlayer1.textContent = player1.current;
 	} else {
-		player2.current = player2.score;
+		player2.current += player2.score;
 		player2.score = 0;
 
 		numberP2.textContent = player2.score;
@@ -165,7 +165,7 @@ function resetGame() {
 	player2.score = 0;
 
 	// Réinitialiser les scores current
-	player1.current = 0;
+	player1.current += 0;
 	player2.current = 0;
 
 	// Réinitialiser les textes des scores
