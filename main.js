@@ -1,19 +1,18 @@
+// Selection du dé
 const theDice = document.querySelector("#dice");
 const rollDice = document.querySelector("#roll");
+// Boutton Hold
 const holdButton = document.querySelector(".hold");
+// Changement de nom
 const currentTextPlayer1 = document.querySelector(".number-current-p1");
 const currentTextPlayer2 = document.querySelector(".number-current-p2");
-
 // Selection des joueurs
 const playerOne = document.querySelector("#player-1");
 const playerTwo = document.querySelector("#player-2");
-
 // Selection des scores
 const numberP1 = document.querySelector(".number-p1");
 const numberP2 = document.querySelector(".number-p2");
-
 const newGame = document.querySelector(".newGame");
-
 // Initialisation du résultat du dé
 let diceResult = 0;
 
@@ -31,6 +30,27 @@ const players = [playerOne, playerTwo]; // tableau des joueurs
 let randomPlayer = Math.floor(Math.random() * 2); // 0 ou 1
 let currentPlayer = players[randomPlayer]; // joueur actuel
 currentPlayer.classList.add("active");
+
+function startGame() {
+    // Réinitialiser les scores
+    player1.score = 0;
+    player2.score = 0;
+    // Réinitialiser les scores current
+    player1.current += 0;
+    player2.current = 0;
+    // Réinitialiser les textes des scores
+    numberP1.textContent = player1.score;
+    numberP2.textContent = player2.score;
+    currentTextPlayer1.textContent = player1.current;
+    currentTextPlayer2.textContent = player2.current;
+    // Réinitialiser le joueur actuel
+    currentPlayer = players[Math.floor(Math.random() * 2)];
+    // Réinitialiser les classes active
+    players.forEach((player) => {
+        player.classList.remove("active");
+    });
+    currentPlayer.classList.add("active");
+}
 
 // Changer le nom du joueur
 players.forEach((player) => {
@@ -51,7 +71,7 @@ players.forEach((player) => {
 // Rotation du dé
 rollDice.addEventListener("click", resultDice)
 
-function resultDice(rollDice) {
+function resultDice() {
     diceResult = Math.floor(Math.random() * 6 + 1);
     theDice.classList.add("dice-roll", "face-" + diceResult);
 
@@ -62,22 +82,17 @@ function resultDice(rollDice) {
         }
     }
 }
-
 theDice.addEventListener("animationend", () => {
     theDice.classList.remove("dice-roll");
-
     // Assigner le score au joueur actuel
     assignScoreToPlayer(diceResult);
 });
 
 // Assination du score au joueur
 function assignScoreToPlayer(score) {
-    // Si le joueur fait 1, on initialise le score à 0
     if (score === 1) {
         score = 0;
     }
-
-    // Ajouter le score au joueur actuel
     if (score !== 0) {
         if (currentPlayer === playerOne) {
             player1.score += score;
@@ -85,48 +100,42 @@ function assignScoreToPlayer(score) {
             player2.score += score;
         }
     } else {
-        // Si le joueur fait 1, on réinitialise son score
         currentPlayer === playerOne ? (player1.score = 0) : (player2.score = 0);
-
-        // Changer le joueur actuel
         switchPlayer();
     }
-
-    // Afficher le score
     numberP1.textContent = player1.score;
     numberP2.textContent = player2.score;
-
-    // Réinitialiser le résultat du dé
     diceResult = 0;
 }
 
 // Au clic sur le boutton hold je verouille le score dans le current du joueur actuel
-holdButton.addEventListener("click", () => {
-    if (currentPlayer === playerOne) {
-        player1.current += player1.score;
-        player1.score = 0;
+holdButton.addEventListener("click", holdScore)
+ function holdScore() {
+     if (currentPlayer === playerOne) {
+         player1.current += player1.score;
+         player1.score = 0;
 
-        numberP1.textContent = player1.score;
-        currentTextPlayer1.textContent = player1.current;
-    } else {
-        player2.current += player2.score;
-        player2.score = 0;
+         numberP1.textContent = player1.score;
+         currentTextPlayer1.textContent = player1.current;
+     } else {
+         player2.current += player2.score;
+         player2.score = 0;
 
-        numberP2.textContent = player2.score;
-        currentTextPlayer2.textContent = player2.current;
-    }
+         numberP2.textContent = player2.score;
+         currentTextPlayer2.textContent = player2.current;
+     }
 
-    // Si le joueur actuel a un score de 100 ou plus, on call la function winner
-    if (currentPlayer === playerOne && player1.current >= 100) {
-        winner(playerOne.innerHTML);
-    } else if (currentPlayer === playerTwo && player2.current >= 100) {
-        winner(playerTwo.innerHTML);
-    }
+     // Si le joueur actuel a un score de 100 ou plus, on call la function winner
+     if (currentPlayer === playerOne && player1.current >= 100) {
+         winner(playerOne.innerHTML);
+     } else if (currentPlayer === playerTwo && player2.current >= 100) {
+         winner(playerTwo.innerHTML);
+     }
 
-    // Changer le joueur actuel
-    switchPlayer();
-});
-
+     // Changer le joueur actuel
+     switchPlayer();
+ }
+ 
 newGame.addEventListener("click", () => {
     restart();
 });
@@ -156,33 +165,6 @@ function winner(player) {
 function restart() {
     const restart = confirm("Voulez-vous recommencer ?");
     if (restart) {
-        resetGame();
+        startGame();
     }
-}
-
-function resetGame() {
-    // Réinitialiser les scores
-    player1.score = 0;
-    player2.score = 0;
-
-    // Réinitialiser les scores current
-    player1.current += 0;
-    player2.current = 0;
-
-    // Réinitialiser les textes des scores
-    numberP1.textContent = player1.score;
-    numberP2.textContent = player2.score;
-
-    currentTextPlayer1.textContent = player1.current;
-    currentTextPlayer2.textContent = player2.current;
-
-    // Réinitialiser le joueur actuel
-    currentPlayer = players[Math.floor(Math.random() * 2)];
-
-    // Réinitialiser les classes active
-    players.forEach((player) => {
-        player.classList.remove("active");
-    });
-
-    currentPlayer.classList.add("active");
 }
