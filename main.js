@@ -79,10 +79,14 @@ function resultDice() {
         theDice.classList.remove("face-" + i);
         if (diceResult === i) {
             theDice.classList.add("face-" + i);
-            theDice.addEventListener("animationend", () => {
-                theDice.classList.remove("dice-roll");
-                // Assigner le score au joueur actuel
-                assignScoreToPlayer(diceResult);
+        }
+    }
+}
+
+theDice.addEventListener("animationend", () => {
+    theDice.classList.remove("dice-roll");
+    // Assigner le score au joueur actuel
+    assignScoreToPlayer(diceResult);
 });
 
 // Assination du score au joueur
