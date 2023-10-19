@@ -52,24 +52,25 @@ players.forEach((player) => {
 });
 
 
-elComeOut.addEventListener("click", () => {
+elComeOut.addEventListener("click", rollAndAnimateDice);
+
+theDice.addEventListener("animationend", handleDiceAnimationEnd);
+
+function rollAndAnimateDice() {
     diceResult = Math.floor(Math.random() * 6 + 1);
     theDice.classList.add("dice-roll", "face-" + diceResult);
 
-    for (let i = 1; i <= 6; i++) {
-        theDice.classList.remove("face-" + i);
-        if (diceResult === i) {
-            theDice.classList.add("face-" + i);
+    setTimeout(() => {
+        for (let i = 1; i <= 6; i++) {
+            theDice.classList.remove("face-" + i);
         }
-    }
-});
+    }, 1000); // Réglez le délai en fonction de la durée de votre animation
+}
 
-theDice.addEventListener("animationend", () => {
+function handleDiceAnimationEnd() {
     theDice.classList.remove("dice-roll");
-
-    // Assigner le score au joueur actuel
     assignScoreToPlayer(diceResult);
-});
+}
 
 function assignScoreToPlayer(score) {
     // Si le joueur fait 1, on initialise le score à 0

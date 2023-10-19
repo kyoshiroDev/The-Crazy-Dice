@@ -85,7 +85,6 @@ function resultDice() {
 
 theDice.addEventListener("animationend", () => {
     theDice.classList.remove("dice-roll");
-    1000
     // Assigner le score au joueur actuel
     assignScoreToPlayer(diceResult);
 });
