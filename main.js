@@ -82,6 +82,7 @@ function resultDice() {
         }
     }
 }
+
 theDice.addEventListener("animationend", () => {
     theDice.classList.remove("dice-roll");
     // Assigner le score au joueur actuel
@@ -110,32 +111,33 @@ function assignScoreToPlayer(score) {
 
 // Au clic sur le boutton hold je verouille le score dans le current du joueur actuel
 holdButton.addEventListener("click", holdScore)
- function holdScore() {
-     if (currentPlayer === playerOne) {
-         player1.current += player1.score;
-         player1.score = 0;
 
-         numberP1.textContent = player1.score;
-         currentTextPlayer1.textContent = player1.current;
-     } else {
-         player2.current += player2.score;
-         player2.score = 0;
+function holdScore() {
+    if (currentPlayer === playerOne) {
+        player1.current += player1.score;
+        player1.score = 0;
 
-         numberP2.textContent = player2.score;
-         currentTextPlayer2.textContent = player2.current;
-     }
+        numberP1.textContent = player1.score;
+        currentTextPlayer1.textContent = player1.current;
+    } else {
+        player2.current += player2.score;
+        player2.score = 0;
 
-     // Si le joueur actuel a un score de 100 ou plus, on call la function winner
-     if (currentPlayer === playerOne && player1.current >= 100) {
-         winner(playerOne.innerHTML);
-     } else if (currentPlayer === playerTwo && player2.current >= 100) {
-         winner(playerTwo.innerHTML);
-     }
+        numberP2.textContent = player2.score;
+        currentTextPlayer2.textContent = player2.current;
+    }
 
-     // Changer le joueur actuel
-     switchPlayer();
- }
- 
+    // Si le joueur actuel a un score de 100 ou plus, on call la function winner
+    if (currentPlayer === playerOne && player1.current >= 100) {
+        winner(playerOne.innerHTML);
+    } else if (currentPlayer === playerTwo && player2.current >= 100) {
+        winner(playerTwo.innerHTML);
+    }
+
+    // Changer le joueur actuel
+    switchPlayer();
+}
+
 newGame.addEventListener("click", () => {
     restart();
 });
