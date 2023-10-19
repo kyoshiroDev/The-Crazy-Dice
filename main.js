@@ -83,11 +83,11 @@ function resultDice() {
     }
 }
 
-/*theDice.addEventListener("animationend", () => {
+theDice.addEventListener("animationend", () => {
     theDice.classList.remove("dice-roll");
     // Assigner le score au joueur actuel
     assignScoreToPlayer(diceResult);
-});*/
+});
 
 // Assination du score au joueur
 function assignScoreToPlayer(score) {
